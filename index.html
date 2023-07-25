@@ -28,6 +28,7 @@
                     extend: {
                         colors: {
                             "food-primary": "#F85559",
+                            "food-secondary": "#121212",
                         },
                     },
                 },
@@ -75,7 +76,7 @@
                             </label>
                             <ul
                                 tabindex="0"
-                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 xl:bg-food-primary xl:text-white rounded-box w-52 font-lato text-lg"
+                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 xl:bg-food-primary xl:text-white rounded-box w-52 font-lato text-lg right-0 md:left-0"
                             >
                                 <li><a>Home</a></li>
                                 <li><a>About Us</a></li>
@@ -99,7 +100,7 @@
                         <div class="form-control">
                             <label class="relative block">
                                 <input
-                                    class="w-full bg-white placeholder:font-italitc border border-slate-400 drop-shadow-md rounded-full py-2 pl-3 pr-10 focus:outline-none"
+                                    class="w-full bg-white placeholder:font-italitc placeholder:opacity-40 border border-slate-400 drop-shadow-md rounded-full py-2 pl-3 pr-10 focus:outline-none"
                                     placeholder="Search here"
                                     type="text"
                                 />
@@ -140,14 +141,16 @@
                         <div
                             class="carousel-text-container text-white text-center space-y-4"
                         >
-                            <h1 class="text-7xl font-extrabold font-lato">
+                            <h1
+                                class="text-2xl lg:text-7xl font-extrabold font-lato"
+                            >
                                 Exotic tastes at your<br />doorstep
                             </h1>
-                            <p class="text-xl font-medium">
+                            <p class="text-sm lg:text-xl font-medium">
                                 We supply highly quality organic products
                             </p>
                             <button
-                                class="text-xl font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black"
+                                class="text-sm lg:text-xl font-bold lg:font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black py-0.5"
                             >
                                 Shop Now
                             </button>
@@ -164,14 +167,16 @@
                         <div
                             class="carousel-text-container text-white text-center space-y-4"
                         >
-                            <h1 class="text-7xl font-extrabold font-lato">
+                            <h1
+                                class="text-2xl lg:text-7xl font-extrabold font-lato"
+                            >
                                 Exotic tastes at your<br />doorstep
                             </h1>
-                            <p class="text-xl font-medium">
+                            <p class="text-sm lg:text-xl font-medium">
                                 We supply highly quality organic products
                             </p>
                             <button
-                                class="text-xl font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black"
+                                class="text-sm lg:text-xl font-bold lg:font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black py-0.5"
                             >
                                 Shop Now
                             </button>
@@ -188,14 +193,16 @@
                         <div
                             class="carousel-text-container text-white text-center space-y-4"
                         >
-                            <h1 class="text-7xl font-extrabold font-lato">
+                            <h1
+                                class="text-2xl lg:text-7xl font-extrabold font-lato"
+                            >
                                 Exotic tastes at your<br />doorstep
                             </h1>
-                            <p class="text-xl font-medium">
+                            <p class="text-sm lg:text-xl font-medium">
                                 We supply highly quality organic products
                             </p>
                             <button
-                                class="text-xl font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black"
+                                class="text-sm lg:text-xl font-bold lg:font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black py-0.5"
                             >
                                 Shop Now
                             </button>
@@ -212,20 +219,85 @@
                         <div
                             class="carousel-text-container text-white text-center space-y-4"
                         >
-                            <h1 class="text-7xl font-extrabold font-lato">
+                            <h1
+                                class="text-2xl lg:text-7xl font-extrabold font-lato"
+                            >
                                 Exotic tastes at your<br />doorstep
                             </h1>
-                            <p class="text-xl font-medium">
+                            <p class="text-sm lg:text-xl font-medium">
                                 We supply highly quality organic products
                             </p>
                             <button
-                                class="text-xl font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black"
+                                class="text-sm lg:text-xl font-bold lg:font-extrabold btn bg-food-primary border-food-primary text-white hover:bg-red-400 hover:border-black py-0.5"
                             >
                                 Shop Now
                             </button>
                         </div>
                         <a href="#slide1" class="btn btn-circle glass">❯</a>
                     </div>
+                </div>
+            </div>
+            <!-- banner fruits -->
+            <div
+                class="banner-fruits hidden xl:grid grid-cols-5 max-w-5xl mx-auto bg-white h-56 rounded-lg relative bottom-28 text-center"
+            >
+                <div
+                    class="fruit-card flex flex-col items-center justify-center"
+                >
+                    <img class="h-28" src="images/fruit1.png" alt="berry" />
+                    <p
+                        class="text-xl opacity-50 font-medium text-food-secondary"
+                    >
+                        Berry
+                    </p>
+                </div>
+                <div
+                    class="fruit-card flex flex-col items-center justify-center"
+                >
+                    <img class="h-28" src="images/fruit2.png" alt="orange" />
+                    <p
+                        class="text-xl opacity-50 font-medium text-food-secondary"
+                    >
+                        Orange
+                    </p>
+                </div>
+                <div
+                    class="fruit-card flex flex-col items-center justify-center"
+                >
+                    <img class="h-28" src="images/fruit3.png" alt="mango" />
+                    <p
+                        class="text-xl opacity-50 font-medium text-food-secondary"
+                    >
+                        Mango
+                    </p>
+                </div>
+                <div
+                    class="fruit-card flex flex-col items-center justify-center"
+                >
+                    <img
+                        class="h-28"
+                        src="images/fruit4.png"
+                        alt="strawberry"
+                    />
+                    <p
+                        class="text-xl opacity-50 font-medium text-food-secondary"
+                    >
+                        Strawberry
+                    </p>
+                </div>
+                <div
+                    class="fruit-card flex flex-col items-center justify-center"
+                >
+                    <img
+                        class="h-28"
+                        src="images/fruit5.png"
+                        alt="pomegranate"
+                    />
+                    <p
+                        class="text-xl opacity-50 font-medium text-food-secondary"
+                    >
+                        Pomegranate
+                    </p>
                 </div>
             </div>
         </main>
