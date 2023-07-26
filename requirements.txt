@@ -3,7 +3,7 @@ main
 -no lorem ipsum \\
 -banner carousel \\
 -deal of the day \\
--meet the team section
+-meet the team section \\
 -footer
 
 bonus
