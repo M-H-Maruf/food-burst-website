@@ -1,13 +1,13 @@
 main
--navbar
--no lorem ipsum
--banner carousel
--deal of the day
+-navbar \\
+-no lorem ipsum \\
+-banner carousel \\
+-deal of the day \\
 -meet the team section
 -footer
 
 bonus
--the box beneath the banner that needs positioning
--modal pop-up when 'details' is clicked
+-the box beneath the banner that needs positioning \\
+-modal pop-up when 'details' is clicked \\
 -why choose us section 
--responsive site
+-responsive site \\
