@@ -33,6 +33,39 @@
                     },
                 },
             };
+            // Set the date we're counting down to
+            var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                var minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="countdown"
+                document.getElementById("day").innerHTML = days;
+                document.getElementById("hour").innerHTML = hours;
+                document.getElementById("minute").innerHTML = minutes;
+                document.getElementById("second").innerHTML = seconds;
+
+                // If the count down is over, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
         </script>
     </head>
     <body>
@@ -298,6 +331,880 @@
                     >
                         Pomegranate
                     </p>
+                </div>
+            </div>
+            <!-- deal of the day section -->
+            <!-- deal description -->
+            <div class="text-container flex h-80 justify-between items-center">
+                <div class="description space-y-6">
+                    <h2
+                        class="font-lato text-5xl text-food-secondary font-extrabold"
+                    >
+                        Deal of the day
+                    </h2>
+                    <p
+                        class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                    >
+                        Contrary to popular belief, is not simply random text.
+                        It has roots in a piece of classical Latin literature
+                        from 45 BC, making it over 2000 years old.
+                    </p>
+                </div>
+                <!-- countdown timer -->
+                <div class="flex justify-center">
+                    <div class="flex gap-10 items-center justify-between">
+                        <div
+                            class="time flex flex-col items-center justify-center"
+                        >
+                            <div class="value">
+                                <span
+                                    id="day"
+                                    class="font-lato text-food-secondary text-5xl font-extrabold"
+                                ></span>
+                            </div>
+                            <div class="property">
+                                <p
+                                    class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                                >
+                                    Days
+                                </p>
+                            </div>
+                        </div>
+
+                        <span
+                            class="font-lato text-food-secondary text-5xl font-extrabold"
+                            >:</span
+                        >
+                        <div
+                            class="time flex flex-col items-center justify-center"
+                        >
+                            <div class="value">
+                                <span
+                                    id="hour"
+                                    class="font-lato text-food-secondary text-5xl font-extrabold"
+                                ></span>
+                            </div>
+                            <div class="property">
+                                <p
+                                    class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                                >
+                                    Hours
+                                </p>
+                            </div>
+                        </div>
+
+                        <span
+                            class="font-lato text-food-secondary text-5xl font-extrabold"
+                            >:</span
+                        >
+                        <div
+                            class="time flex flex-col items-center justify-center"
+                        >
+                            <div class="value">
+                                <span
+                                    id="minute"
+                                    class="font-lato text-food-secondary text-5xl font-extrabold"
+                                ></span>
+                            </div>
+                            <div class="property">
+                                <p
+                                    class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                                >
+                                    Minutes
+                                </p>
+                            </div>
+                        </div>
+                        <span
+                            class="font-lato text-food-secondary text-5xl font-extrabold"
+                            >:</span
+                        >
+                        <div
+                            class="time flex flex-col items-center justify-center"
+                        >
+                            <div class="value">
+                                <span
+                                    id="second"
+                                    class="font-lato text-food-secondary text-5xl font-extrabold"
+                                ></span>
+                            </div>
+                            <div class="property">
+                                <p
+                                    class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                                >
+                                    Seconds
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- deal cards -->
+            <div
+                class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            >
+            <!-- apple card -->
+                <div
+                    class="card py-12 bg-base-100 shadow-2xl flex flex-col justify-center items-center gap-8"
+                >
+                    <figure>
+                        <img class="h-32" src="images/fruit6.png" alt="apples" />
+                    </figure>
+                    <div
+                        class="card-body flex flex-col justify-center items-center gap-3"
+                    >
+                        <h2 class="card-title text-2xl font-bold">
+                            12.90$ - 18.85$
+                        </h2>
+                        <hr class="w-60" />
+                        <p
+                            class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                        >
+                            Apples
+                        </p>
+                        <!-- rating -->
+                        <div class="rating rating-md rating-half font-lato">
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="rating-hidden"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                        </div>
+                        <!-- modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <a
+                            class="link link-hover text-food-primary text-lg"
+                            onclick="my_modal_1.showModal()"
+                            >Details</a
+                        >
+                        <dialog
+                            id="my_modal_1"
+                            class="modal modal-bottom sm:modal-middle"
+                        >
+                            <form
+                                method="dialog"
+                                class="modal-box max-w-xl space-y-5 p-16"
+                            >
+                                <figure>
+                                    <img
+                                        class="h-32"
+                                        src="images/fruit6.png"
+                                        alt="Shoes"
+                                    />
+                                </figure>
+                                <div
+                                    class="card-body flex flex-col justify-center items-center gap-4"
+                                >
+                                    <h3 class="font-extrabold text-4xl">
+                                        Apples
+                                    </h3>
+                                    <p
+                                        class="text-base font-medium text-food-secondary opacity-60 max-w-xs text-center"
+                                    >
+                                        Professional employees are there for you
+                                        to pick the most amazing and fresh
+                                        fruits.
+                                    </p>
+                                    <div
+                                        class="rating rating-md rating-half font-lato"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="rating-hidden"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                            checked
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                    </div>
+                                    <div class="modal-action space-x-8">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button
+                                            class="btn btn-outline hover:bg-food-primary hover:border-food-primary text-food-primary"
+                                        >
+                                            Close
+                                        </button>
+                                        <button
+                                            class="btn bg-food-primary text-white hover:text-food-primary hover:border-food-primary hover:border"
+                                        >
+                                            Buy Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                </div>
+                <!-- orange card -->
+                <div
+                    class="card py-12 bg-base-100 shadow-2xl flex flex-col justify-center items-center gap-8"
+                >
+                    <figure>
+                        <img class="h-32" src="images/fruit7.png" alt="Orange" />
+                    </figure>
+                    <div
+                        class="card-body flex flex-col justify-center items-center gap-3"
+                    >
+                        <h2 class="card-title text-2xl font-bold">
+                            12.90$ - 18.85$
+                        </h2>
+                        <hr class="w-60" />
+                        <p
+                            class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                        >
+                            Orange
+                        </p>
+                        <!-- rating -->
+                        <div class="rating rating-md rating-half font-lato">
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="rating-hidden"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                        </div>
+                        <!-- modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <a
+                            class="link link-hover text-food-primary text-lg"
+                            onclick="my_modal_2.showModal()"
+                            >Details</a
+                        >
+                        <dialog
+                            id="my_modal_2"
+                            class="modal modal-bottom sm:modal-middle"
+                        >
+                            <form
+                                method="dialog"
+                                class="modal-box max-w-xl space-y-5 p-16"
+                            >
+                                <figure>
+                                    <img
+                                        class="h-32"
+                                        src="images/fruit7.png"
+                                        alt="orange"
+                                    />
+                                </figure>
+                                <div
+                                    class="card-body flex flex-col justify-center items-center gap-4"
+                                >
+                                    <h3 class="font-extrabold text-4xl">
+                                        Orange
+                                    </h3>
+                                    <p
+                                        class="text-base font-medium text-food-secondary opacity-60 max-w-xs text-center"
+                                    >
+                                        Professional employees are there for you
+                                        to pick the most amazing and fresh
+                                        fruits.
+                                    </p>
+                                    <div
+                                        class="rating rating-md rating-half font-lato"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="rating-hidden"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                            checked
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                    </div>
+                                    <div class="modal-action space-x-8">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button
+                                            class="btn btn-outline hover:bg-food-primary hover:border-food-primary text-food-primary"
+                                        >
+                                            Close
+                                        </button>
+                                        <button
+                                            class="btn bg-food-primary text-white hover:text-food-primary hover:border-food-primary hover:border"
+                                        >
+                                            Buy Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                </div>
+                <!-- red dragon card -->
+                <div
+                    class="card py-12 bg-base-100 shadow-2xl flex flex-col justify-center items-center gap-8"
+                >
+                    <figure>
+                        <img class="h-32" src="images/fruit8.png" alt="red dragon" />
+                    </figure>
+                    <div
+                        class="card-body flex flex-col justify-center items-center gap-3"
+                    >
+                        <h2 class="card-title text-2xl font-bold">
+                            12.90$ - 18.85$
+                        </h2>
+                        <hr class="w-60" />
+                        <p
+                            class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                        >
+                            Red Dragon
+                        </p>
+                        <!-- rating -->
+                        <div class="rating rating-md rating-half font-lato">
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="rating-hidden"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                        </div>
+                        <!-- modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <a
+                            class="link link-hover text-food-primary text-lg"
+                            onclick="my_modal_3.showModal()"
+                            >Details</a
+                        >
+                        <dialog
+                            id="my_modal_3"
+                            class="modal modal-bottom sm:modal-middle"
+                        >
+                            <form
+                                method="dialog"
+                                class="modal-box max-w-xl space-y-5 p-16"
+                            >
+                                <figure>
+                                    <img
+                                        class="h-32"
+                                        src="images/fruit7.png"
+                                        alt="red dragon"
+                                    />
+                                </figure>
+                                <div
+                                    class="card-body flex flex-col justify-center items-center gap-4"
+                                >
+                                    <h3 class="font-extrabold text-4xl">
+                                        Red Dragon
+                                    </h3>
+                                    <p
+                                        class="text-base font-medium text-food-secondary opacity-60 max-w-xs text-center"
+                                    >
+                                        Professional employees are there for you
+                                        to pick the most amazing and fresh
+                                        fruits.
+                                    </p>
+                                    <div
+                                        class="rating rating-md rating-half font-lato"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="rating-hidden"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                            checked
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                    </div>
+                                    <div class="modal-action space-x-8">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button
+                                            class="btn btn-outline hover:bg-food-primary hover:border-food-primary text-food-primary"
+                                        >
+                                            Close
+                                        </button>
+                                        <button
+                                            class="btn bg-food-primary text-white hover:text-food-primary hover:border-food-primary hover:border"
+                                        >
+                                            Buy Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
+                </div>
+                <!-- banana card -->
+                <div
+                    class="card py-12 bg-base-100 shadow-2xl flex flex-col justify-center items-center gap-8"
+                >
+                    <figure>
+                        <img class="h-32" src="images/fruit9.png" alt="banana" />
+                    </figure>
+                    <div
+                        class="card-body flex flex-col justify-center items-center gap-3"
+                    >
+                        <h2 class="card-title text-2xl font-bold">
+                            12.90$ - 18.85$
+                        </h2>
+                        <hr class="w-60" />
+                        <p
+                            class="max-w-xl font-lato text-food-secondary opacity-60 font-medium"
+                        >
+                            Banana
+                        </p>
+                        <!-- rating -->
+                        <div class="rating rating-md rating-half font-lato">
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="rating-hidden"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-1"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-10"
+                                class="bg-food-primary mask mask-star-2 mask-half-2"
+                            />
+                        </div>
+                        <!-- modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <a
+                            class="link link-hover text-food-primary text-lg"
+                            onclick="my_modal_4.showModal()"
+                            >Details</a
+                        >
+                        <dialog
+                            id="my_modal_4"
+                            class="modal modal-bottom sm:modal-middle"
+                        >
+                            <form
+                                method="dialog"
+                                class="modal-box max-w-xl space-y-5 p-16"
+                            >
+                                <figure>
+                                    <img
+                                        class="h-32"
+                                        src="images/fruit9.png"
+                                        alt="banana"
+                                    />
+                                </figure>
+                                <div
+                                    class="card-body flex flex-col justify-center items-center gap-4"
+                                >
+                                    <h3 class="font-extrabold text-4xl">
+                                        Banana
+                                    </h3>
+                                    <p
+                                        class="text-base font-medium text-food-secondary opacity-60 max-w-xs text-center"
+                                    >
+                                        Professional employees are there for you
+                                        to pick the most amazing and fresh
+                                        fruits.
+                                    </p>
+                                    <div
+                                        class="rating rating-md rating-half font-lato"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="rating-hidden"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                            checked
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-1"
+                                        />
+                                        <input
+                                            type="radio"
+                                            name="rating-10"
+                                            class="bg-food-primary mask mask-star-2 mask-half-2"
+                                        />
+                                    </div>
+                                    <div class="modal-action space-x-8">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button
+                                            class="btn btn-outline hover:bg-food-primary hover:border-food-primary text-food-primary"
+                                        >
+                                            Close
+                                        </button>
+                                        <button
+                                            class="btn bg-food-primary text-white hover:text-food-primary hover:border-food-primary hover:border"
+                                        >
+                                            Buy Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
                 </div>
             </div>
         </main>
